@@ -1,2 +1,3 @@
-# whiteboard
-whiteboarding problems and solutions to study for whiteboard interviews
+##### whiteboard
+
+### javascript whiteboard problems and solutions to study for interviews
