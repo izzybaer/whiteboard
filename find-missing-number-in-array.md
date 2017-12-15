@@ -36,7 +36,7 @@ big O(n)
 
 // Vinicio's solution
 const findMissingNumberMath = (array) => {
-  
+
   let totalItems = 100;
   let firstNumber = 1;
   let lastNumber = 100;
