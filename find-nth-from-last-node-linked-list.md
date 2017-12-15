@@ -16,7 +16,18 @@ let nthFromLast = (node, num) => {
   return node;
 }
 
-// Matthew Lion Parkers' solution 
+// Matthew Lion Parkers' solution
+const node = {
+  value: 1,
+  next: {
+    value: 2,
+    next: {
+      value: 3,
+      next: null
+    }
+  }
+}
+
 const nthFromLast = (head, n) => {
   let p1 = head, p2 = head;
 
@@ -32,16 +43,6 @@ const nthFromLast = (head, n) => {
   return p1;
 }
 
-const node = {
-  value: 1,
-  next: {
-    value: 2,
-    next: {
-      value: 3,
-      next: null
-    }
-  }
-}
 
 nthFromLast(node, 2) // will print { value: 1, next: { value: 2, next: { value: 3, next: null } } }
 nthFromLast(node, 1) // will print { value: 2, next: { value: 3, next: null } }
