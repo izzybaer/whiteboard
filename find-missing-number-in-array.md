@@ -8,6 +8,7 @@ You have an integer array which contains numbers from 1 to 100 but one number is
 // then it reduces the array and adds each number together
 // gives us the sum of numbers 1 to 100 (5151)
 
+// Izzy's solution
 const test = [...Array(99).keys()].map(x => ++x);
 
 const findNumber = (array) => {
@@ -24,10 +25,28 @@ const findNumber = (array) => {
 findNumber(test);
 // gives us 100
 
+big O(n)
+
 
 // on line 13 we are creating an array that contains numbers 1 to 100
 // we are using the spread operator with the .keys() function
 // then we are mapping over the numbers in the array and getting rid of 0
 // then we are reducing and adding each value together to get the expectedSum
+
+
+// Vinicio's solution
+const findMissingNumberMath = (array) => {
+  
+  let totalItems = 100;
+  let firstNumber = 1;
+  let lastNumber = 100;
+  let totalExpectedSum = (totalItems / 2) * (firstNumber + lastNumber); // arithmetic progression
+
+  let actualSum  = array.reduce((acc, cur) => acc + cur);
+
+  return totalExpectedSum - actualSum;
+};
+
+big O(1)
 ```
 * One trick to solve this problem is to calculate sum of all numbers in the array and compare with expected sum, the difference would be the missing number.
