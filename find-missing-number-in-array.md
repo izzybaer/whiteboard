@@ -8,7 +8,7 @@ const calculateMissing = (array) => {
 }
 
 // print an array with numbers 1 to 100 comma separated
-[...Array(101).keys()].map(x => ++ x);
+[...Array(101).keys()].map(x => ++ x).reduce((acc, cur) => acc + cur);
 
 ```
 * One trick to solve this problem is to calculate sum of all numbers in the array and compare with expected sum, the difference would be the missing number.
