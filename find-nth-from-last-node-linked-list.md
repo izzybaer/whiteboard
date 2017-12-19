@@ -5,7 +5,7 @@ return the nth from last node in a linked list
 // Bash Master Duncan Marsh's
 let nthFromLast = (node, num) => {
   let offset = node;
-  for(var i = 0; i< num && offset; i++)
+  for(var i = 0; i < num && offset; i++)
     offset = offset.next;
   if(i < num)
     return null;
@@ -16,8 +16,8 @@ let nthFromLast = (node, num) => {
   return node;
 }
 
-// Matthew Lion Parkers' solution
-const node = {
+// Matthew Lion Parkers' and Izzy Baers' solution
+const list = {
   value: 1,
   next: {
     value: 2,
