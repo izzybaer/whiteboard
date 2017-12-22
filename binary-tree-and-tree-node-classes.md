@@ -1,6 +1,5 @@
 ```javascript
 
-// this is an object oriented approach of a class TreeNode and class BinaryTree
 class TreeNode {
   constructor(value, left, right) {
     this.value = value;
@@ -14,10 +13,5 @@ class BinaryTree {
     this.root = null;
   }
 }
-
-
-
-
-
 
 ```
