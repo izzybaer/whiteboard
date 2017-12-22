@@ -1,4 +1,4 @@
-write a function to take in a tree and return an array with all of the leaves in binary tree
+write a function to take in a tree and return an array with all of the leaves in a binary tree
 
 ```javascript
 
@@ -7,6 +7,10 @@ class TreeNode {
     this.value = value;
     this.left = left;
     this.right = right;
+  }
+
+  toString() {
+    return this.value;
   }
 }
 
@@ -24,31 +28,40 @@ class BinaryTree {
   // else return this._toString(node.left) RECURSION
   // this._toString(node.left) goes back up to the top of the function
 
+
   _toString(node) {
     if(!node) {
       return '';
     }
     let leftStr = this._toString(node.left);
     let rightStr = this._toString(node.right);
-
     return leftStr + ' ' + node.value + ' ' + rightStr;
   }
 
-  findLeaves(tree) {
+  // always pass in this.root as the starting point
+  // this public function invokes the private function
+
+  findLeaves() {
     let leaves = [];
-
-    let reportLeaves = (tree) => {
-      if(tree.left == null && tree.right == null) leaves.push(tree);
-      if(tree.left !== null) reportLeaves(tree.left);
-      if(tree.right !== null) reportLeaves(tree.right);
-
-    }
-    reportLeaves(tree);
+    this._findLeaves(this.root, leaves);
     return leaves;
+  }
+
+  // _ signifies private vs. line 37 which is public, and calls _findLeaves()
+  _findLeaves(node, leaves) {
+      if(!node) {
+        return;
+      } else if (!node.left && !node.right) {
+        leaves.push(node);
+      } else {
+        this._findLeaves(node.left, leaves);
+        this._findLeaves(node.right, leaves);
+      }
   }
 }
 
 let tree = new BinaryTree();
+
 let one = new TreeNode(1);
 let two = new TreeNode(2);
 let three = new TreeNode(3);
@@ -57,23 +70,21 @@ let five = new TreeNode(5);
 let six = new TreeNode(6);
 let seven = new TreeNode(7);
 
-// let one = new BinaryTree(1);
-// let two = new BinaryTree(2);
-// let three = new BinaryTree(3);
-// let four = new BinaryTree(4);
-// let five = new BinaryTree(5);
+// always start at the middle
+// for us the middle between 1 and 7 is 4
 
-one.left = two;
-one.right = three;
+four.left = two;
+two.left = one;
+two.right = three;
 
-three.left = four;
-three.right = five;
+four.right = six;
+six.left = five;
+six.right = seven;
 
-five.left = six;
-five.right = seven;
+tree.root = four;
 
-tree.root = one;
-console.log('tree', tree.toString());
+console.log('tree: ' + tree);
+console.log('leaves: ' + tree.findLeaves());
 
 // time is big O(n)
 // space is big O(lg n) the height of the tree
