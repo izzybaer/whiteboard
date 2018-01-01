@@ -6,7 +6,7 @@ Run on repl: https://repl.it/repls/LimeNocturnalWhippoorwill
 // OBJECT ORIENTED APPROACH
 
 class KAryNode {
-  constructor(value, children=[]) {
+  constructor(value, children = []) {
     this.value = value;
     this.children = children;
   }
@@ -96,9 +96,8 @@ const findNonLeaves = (tree) => {
     }
   };
   traverse(tree);
-  console.log(nodes);
   return nodes;
 };
 
-findNonLeaves(one);
+findNonLeaves(one); // returns 1, 3, 6 (non leaves)
 ```

@@ -125,10 +125,10 @@ const findLeaves = (tree) => {
   }
   reportLeaves(tree);
   return leaves;
-  console.log(leaves)
 }
 
-findLeaves(one)
+findLeaves(one); // returns 2, 4, 5
 
-
+// time is big O(n)
+// space is big O (lg n) the height of the tree
 ```
