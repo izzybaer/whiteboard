@@ -11,7 +11,7 @@ given a single node, validate the binary search tree ensuring that every nodes l
 // and reset max each time
 // when we move left we update the max value
 // when we move right we update the min value
-class BinaryTree{
+class BinarySearchTree{
   constructor(value){
     this.value = value;
     this.left = null;
@@ -19,13 +19,13 @@ class BinaryTree{
   }
 }
 
-let one = new BinaryTree(1);
-let two = new BinaryTree(2);
-let three = new BinaryTree(3);
-let four = new BinaryTree(4);
-let five = new BinaryTree(5);
-let six = new BinaryTree(6);
-let seven = new BinaryTree(7);
+let one = new BinarySearchTree(1);
+let two = new BinarySearchTree(2);
+let three = new BinarySearchTree(3);
+let four = new BinarySearchTree(4);
+let five = new BinarySearchTree(5);
+let six = new BinarySearchTree(6);
+let seven = new BinarySearchTree(7);
 
 four.left = two;
 four.right = six;
