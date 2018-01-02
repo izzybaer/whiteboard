@@ -11,6 +11,30 @@ given a single node, validate the binary search tree ensuring that every nodes l
 // and reset max each time
 // when we move left we update the max value
 // when we move right we update the min value
+class BinaryTree{
+  constructor(value){
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+let one = new BinaryTree(1);
+let two = new BinaryTree(2);
+let three = new BinaryTree(3);
+let four = new BinaryTree(4);
+let five = new BinaryTree(5);
+let six = new BinaryTree(6);
+let seven = new BinaryTree(7);
+
+four.left = two;
+four.right = six;
+
+two.left = one;
+two.right = three;
+
+six.left = five;
+six.right = seven;
 
 const validate = (node, min = null, max = null) => {
   if(max !== null && node.value > max) {
@@ -30,4 +54,5 @@ const validate = (node, min = null, max = null) => {
 
   return true;
 }
+validate(three);
 ```
