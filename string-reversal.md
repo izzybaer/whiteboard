@@ -14,4 +14,10 @@ const reverseStr = (str) => {
 }
 
 reverseStr('izabella'); // prints 'allebazi'
+
+// this method is the same but fancier
+
+const reverseStr = (str) => str.split('').reverse().join('');
+
+reverseStr('izabella'); // prints 'allebazi'
 ```
