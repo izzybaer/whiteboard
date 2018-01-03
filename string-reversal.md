@@ -20,4 +20,17 @@ reverseStr('izabella'); // prints 'allebazi'
 const reverseStr = (str) => str.split('').reverse().join('');
 
 reverseStr('izabella'); // prints 'allebazi'
+
+// this method uses a for loop (for of syntax)
+// can't use this syntax to loop through every 'so' many elements (third, fifth, sixth)
+
+const reverseStr = (str) => {
+  let reversed = '';
+
+  for(let character of str){
+    reversed = character + reversed;
+  }
+  return reversed;
+}
+reverseStr('izabella'); // prints 'allebazi'
 ```
