@@ -14,13 +14,15 @@ const reverseStr = (str) => {
 }
 
 reverseStr('izabella'); // prints 'allebazi'
-
+```
+```javascript
 // this method is the same but fancier
 
 const reverseStr = (str) => str.split('').reverse().join('');
 
 reverseStr('izabella'); // prints 'allebazi'
-
+```
+```javascript
 // this method uses a for loop (for of syntax)
 // can't use this syntax to loop through every 'so' many elements (third, fifth, sixth)
 
@@ -33,4 +35,13 @@ const reverseStr = (str) => {
   return reversed;
 }
 reverseStr('izabella'); // prints 'allebazi'
+```
+```javascript
+// this method is my favorite and super fancy
+// this last method will use a complicated array helper
+
+const reverseStr = (str) => return str.split('').reduce((a, c) => c + a, '');
+  // takes all the values of the array and condenses them into one singular value
+
+reverseStr('javascript'); // prints 'tpircsavaj'
 ```
