@@ -5,11 +5,45 @@ ex:
   palindrome('abcdefg') === false 'gfedcba'
 
 ```javascript
+// not accounting for whitespace / punctuation
 const palindrome = (str) => {
   let reversed = str.split('').reverse().join('');
 
   return str === reversed;
 }
 
-palindrome('lolol')
+palindrome('lolol');
+
+
+// accounting for whitespace and punctuation
+const isPunc = (x) => {
+    let punc = ";:.,?!-'\"(){}";
+
+    return punc.indexOf(x) === -1 ? false : true;
+}
+const isWhiteSpace = (x) => {
+    return x === ' ' ? true : false;
+}
+
+const palindrome = (str) => {
+
+    // create temporary string
+    let compressed = '';
+
+    // check every character in the string
+    for (var i = 0; i < str.length; i++){
+        let letter = str.charAt(i).toLowerCase();
+        
+        // add whitespace chars and punc to string
+        if (isPunc(letter) === false && isWhiteSpace(letter) === false) {
+            compressed += letter;
+        }
+    }
+    return compressed === [...compressed].reverse().join('');
+}
+
+console.log(palindrome('A man, a plan, a canal, Panama!  lalala')) // false
+console.log(palindrome('A man, a plan, a canal, Panama!  ')) // true
+
+
 ```
