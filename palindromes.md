@@ -42,6 +42,8 @@ const palindrome = (str) => {
     return compressed === [...compressed].reverse().join('');
 }
 
-console.log(palindrome('A man, a plan, a canal, Panama!  lalala'))
+console.log(palindrome('A man, a plan, a canal, Panama!  lalala')) // false
+console.log(palindrome('A man, a plan, a canal, Panama!  ')) // true
+
 
 ```
